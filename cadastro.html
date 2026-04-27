@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="icon" href="">
+
+    <link rel="stylesheet" href="style/style_cadastro.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="NBA-Hub_home.html" class="logo">
+                <img src="imgs/NBA_Hub_logo.png" width="75" height="75">
+
+            </a>
+
+        <button class="area_cliente">ACESSAR</button>
+
+        </div>
+    </header>
+
+    <div class="cadastro">
+
+        <div class="container">
+            <div class="card-cadastro">
+                <h2>Cadastre-se</h2>
+                <div class="formulario">
+                    <div class="campo">
+                        <span>Nome de usuário</span>
+                        <input type="text" placeholder="Seu nome de usuário" id="ipt_nome_usuario">
+                    </div>
+
+                    <div class="campo">
+                        <span>Insira seu e-mail</span>
+                        <input type="email" placeholder="email@provedor.com.br" id="ipt_email" oninput="validarEmail()">
+                        <div id="txt_email" class="parametros"></div>
+                    </div>
+
+                    <div class="campo">
+                        <span>Insira uma senha</span>
+                        <input type="password" placeholder="********" id="ipt_senha" oninput="validarSenha()">
+                        <div id="txt_senha" class="parametros"></div>
+                    </div>
+
+                    <div class="campo">
+                        <span>Confirme sua senha</span>
+                        <input type="password" placeholder="********" id="ipt_confirm_senha"
+                            oninput="validarConfirmacao()">
+                        <div id="txt_confirmSenha" class="parametros"></div>
+                    </div>
+
+                    <button class="button" onclick="cadastro()">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer>
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <a href="NBA-Hub_home.html" class="logo">
+                    <img src="imgs/NBA_Hub_logo.png" width="100" height="100">
+                </a>
+                <p>Sua conexão com a NBA, em um só lugar.</p>
+            </div>
+            <div class="footer-col">
+                <h4>NBA Hub</h4>
+                <ul>
+                    <li><a href="NBA-Hub_home.html">Sobre nós</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>ÁREA DO USUÁRIO</h4>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Pesquisa</a></li>
+                    <li><a href="#">Quiz</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>SUPORTE</h4>
+                <ul>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="footer-divisor" />
+
+        <div class="footer-bottom">
+            <p>© 2026 NBA Hub. Todos os direitos reservados.</p>
+        </div>
+
+
+    </footer>
+
+</body>
+
+</html>
+<script>
+    let checkEmail = false
+    let checkTamanhoSenha = false
+    let checkConfirmacao = false
+    let checkMaiuscula = false
+    let checkMinuscula = false
+    let checkCaractere = false
+    let caracteresEspeciais = ['!', '@', '#', '$', '%', '¨', '&', '*', '(', ')', '-', '_',
+        '+', '=', ',', '.', '<', '>', ':', ';', '"', '|', '?', '/', '°',
+        'º', '~', '^', '´', '`', '{', '[', '}', ']', '£', '¢', '¬', 'ª']
+
+    function validarEmail() {
+        let email = ipt_email.value;
+
+        if (email.includes('@') && email.includes('.com')) {
+            txt_email.innerHTML = ``;
+            checkEmail = true
+        } else if (email.includes('.com')) {
+            txt_email.innerHTML = `Email deve conter @`
+            checkEmail = false
+        } else if (email.includes('@')){
+            txt_email.innerHTML = `Email deve conter '.com'`
+            checkEmail = false
+        }else{
+            txt_email.innerHTML = 'Deve preencher o email corretamente'
+            checkEmail = false
+        }
+    }
+
+    function validarCaractere() {
+        let senha = ipt_senha.value;
+        for (let i = 0; i < caracteresEspeciais.length; i++) {
+            if (senha.includes(caracteresEspeciais[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validarSenha() {
+        let senha = ipt_senha.value;
+        let tamanho = senha.length;
+        let msg_tamanho = ``
+        let msg_minuscula = ``
+        let msg_maiscula = ``
+        let msg_caractere = ``
+
+        if (senha.toUpperCase() == senha) {
+            msg_minuscula = 'A senha deve conter ao menos 1 letra minúscula. <br>'
+            checkMinuscula = false
+        } else {
+            checkMinuscula = true
+        }
+        if (senha.toLowerCase() == senha) {
+            msg_maiscula = 'A senha deve conter ao menos 1 letra maiúscula. <br>'
+            checkMaiuscula = false
+        } else {
+            checkMaiuscula = true
+        }
+        if (tamanho < 8) {
+            msg_tamanho = 'Senha deve ter pelo menos 8 caracteres. <br>'
+            checkTamanhoSenha = false
+        } else {
+            checkTamanhoSenha = true
+        }
+        if (validarCaractere()) {
+            msg_caractere = 'A senha deve conter ao menos um caractere especial. <br>'
+            checkCaractere = false
+        } else {
+            checkCaractere = true
+        }
+
+        txt_senha.innerHTML = msg_tamanho + msg_minuscula + msg_maiscula + msg_caractere;
+    }
+
+    function validarConfirmacao() {
+        let confirmacao = ipt_confirm_senha.value;
+        let senha = ipt_senha.value
+
+        if (confirmacao == senha) {
+            checkConfirmacao = true
+            txt_confirmSenha.innerHTML = ''
+        } else {
+            checkConfirmacao = false
+            txt_confirmSenha.innerHTML = `As senhas não coincidem`
+        }
+    }
+
+
+    function cadastro() {
+        let nome = ipt_nome_usuario.value;
+
+        if (nome != '' && checkEmail && checkTamanhoSenha && checkMaiuscula && checkMinuscula && checkConfirmacao && checkCaractere) {
+            alert('Cadastrado(a) com sucesso! \n\nSeja bem vindo(a) ao NBA HUB.')
+        } else {
+            alert('Não foi possível cadastra-lo(a) corretamente, tente novamente')
+        }
+    }
+
+</script>

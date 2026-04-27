@@ -115,51 +115,6 @@ nav a:hover {
     color: rgb(15, 15, 126);
 }
 
-.cta button  {
-    margin: 10px;
-    padding: 12px 24px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.cadastro {
-    background: rgb(15, 15, 126);
-    color: white;
-    border:1, 5px solid white;
-}
-
-.sobre, .recursos {
-    text-align: center;
-    margin: 40px auto;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.cards .card {
-    width: 200px;
-    text-align: center;
-    height: 200px;
-    padding: 15px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.747);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.897);
-}
-
 footer {
     background: rgb(15, 15, 126);
     color: white;

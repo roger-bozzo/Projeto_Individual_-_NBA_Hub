@@ -100,35 +100,7 @@ nav a:hover {
     transition: transform 0.3s ease;
 }
 
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    margin: 40px auto;
-    width: 80%;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-}
-
-.hero h1 {
-    font-size: 28px;
-    color: rgb(15, 15, 126);
-}
-
-.cta button  {
-    margin: 10px;
-    padding: 12px 24px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.cadastro {
-    background: rgb(15, 15, 126);
-    color: white;
-    border:1, 5px solid white;
-}
-
-.sobre, .recursos {
+.estrelas {
     text-align: center;
     margin: 40px auto;
     width: 80%;
@@ -139,21 +111,19 @@ nav a:hover {
 }
 
 .cards {
-    display: flex;
+    display: contents;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .cards .card {
-    width: 200px;
+    min-width: 90%;
     text-align: center;
     height: 200px;
     padding: 15px;
     margin-top: 40px;
     margin-bottom: 40px;
     border-radius: 20px;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.747);
