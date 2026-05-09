@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="icon" href="">
+    <title>Login</title>
     <link rel="stylesheet" href="style/style_global.css">
-    <link rel="stylesheet" href="style/style_cadastro.css">
+    <link rel="stylesheet" href="style/style_login.css">
 </head>
-
 <body>
     <header>
         <div class="header-inner">
@@ -18,24 +15,20 @@
 
             </a>
 
-        <a href="login.html">
+            <a href="login.html">
                 <button class="area_cliente">ACESSAR</button>
             </a>
 
         </div>
     </header>
 
-    <div class="cadastro">
+    <div class="login">
 
         <div class="container">
-            <div class="card-cadastro">
-                <h2>Cadastre-se</h2>
+            <div class="card-login">
+                <h2>Acesse a área do usuário</h2>
                 <div class="formulario">
-                    <div class="campo">
-                        <span>Nome de usuário</span>
-                        <input type="text" placeholder="Seu nome de usuário" id="ipt_nome_usuario">
-                    </div>
-
+                    
                     <div class="campo">
                         <span>Insira seu e-mail</span>
                         <input type="email" placeholder="email@provedor.com.br" id="ipt_email" oninput="validarEmail()">
@@ -48,19 +41,13 @@
                         <div id="txt_senha" class="parametros"></div>
                     </div>
 
-                    <div class="campo">
-                        <span>Confirme sua senha</span>
-                        <input type="password" placeholder="********" id="ipt_confirm_senha"
-                            oninput="validarConfirmacao()">
-                        <div id="txt_confirmSenha" class="parametros"></div>
-                    </div>
-
-                    <button class="button" onclick="cadastro()">Cadastrar</button>
+                    <button class="button" onclick="login()">Login</button>
                 </div>
             </div>
         </div>
     </div>
-<footer>
+
+    <footer>
         <div class="footer-top">
 
             <div class="footer-brand">
@@ -102,14 +89,12 @@
 
 
     </footer>
-
+    
 </body>
-
 </html>
 <script>
     let checkEmail = false
     let checkTamanhoSenha = false
-    let checkConfirmacao = false
     let checkMaiuscula = false
     let checkMinuscula = false
     let checkCaractere = false
@@ -139,10 +124,10 @@
         let senha = ipt_senha.value;
         for (let i = 0; i < caracteresEspeciais.length; i++) {
             if (senha.includes(caracteresEspeciais[i])) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     function validarSenha() {
@@ -171,7 +156,7 @@
         } else {
             checkTamanhoSenha = true
         }
-        if (!validarCaractere()) {
+        if (validarCaractere()) {
             msg_caractere = 'A senha deve conter ao menos um caractere especial. <br>'
             checkCaractere = false
         } else {
@@ -181,28 +166,14 @@
         txt_senha.innerHTML = msg_tamanho + msg_minuscula + msg_maiscula + msg_caractere;
     }
 
-    function validarConfirmacao() {
-        let confirmacao = ipt_confirm_senha.value;
-        let senha = ipt_senha.value
 
-        if (confirmacao == senha) {
-            checkConfirmacao = true
-            txt_confirmSenha.innerHTML = ''
+    function login() {
+
+        if (checkEmail && checkTamanhoSenha && checkMaiuscula && checkMinuscula && checkCaractere) {
+            alert('Logado(a) com sucesso! \n\nSeja bem vindo(a) ao NBA HUB.')
+            window.open('area_usuario.html')
         } else {
-            checkConfirmacao = false
-            txt_confirmSenha.innerHTML = `As senhas não coincidem`
-        }
-    }
-
-
-    function cadastro() {
-        let nome = ipt_nome_usuario.value;
-
-        if (nome != '' && checkEmail && checkTamanhoSenha && checkMaiuscula && checkMinuscula && checkConfirmacao && checkCaractere) {
-            alert('Cadastrado(a) com sucesso! \n\nSeja bem vindo(a) ao NBA HUB.')
-            window.open('login.html')
-        } else {
-            alert('Não foi possível cadastra-lo(a) corretamente, tente novamente')
+            alert('Não foi possível logar corretamente, tente novamente')
         }
     }
 
