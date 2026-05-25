@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Hub | Dashboard</title>
+
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <script src="js/auth.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica&display=swap" rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+
+
+<body onload="carregarDashboard()">
+
+    <header>
+        <div class="header-inner">
+            <a href="profile.html" class="logo">
+                <img src="assets/img/logo/logo.png" width="75" height="75" alt="NBA Hub">
+            </a>
+
+            <nav>
+                <a href="historia.html">HISTÓRIA</a>
+                <a href="jogadores.html">JOGADORES HISTÓRICOS</a>
+                <a href="equipes.html">EQUIPES</a>
+                <a href="dashboard.html">DASHBOARD</a>
+            </nav>
+
+            <button class="area_cliente" id="btn_acesso">ACESSAR</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="dash-area">
+            <h2>Dashboard</h2>
+            <p class="subtitulo">Visão geral de usuários, quiz e pesquisa de fãs</p>
+
+
+            <div class="metricas">
+                <div class="metrica-card">
+                    <span class="label">Usuários cadastrados</span>
+                    <span class="valor" id="m_usuarios">—</span>
+                </div>
+                <div class="metrica-card">
+                    <span class="label">Quizzes realizados</span>
+                    <span class="valor" id="m_quizzes">—</span>
+                </div>
+                <div class="metrica-card">
+                    <span class="label">Aproveitamento médio</span>
+                    <span class="valor" id="m_aproveitamento">—</span>
+                </div>
+                <div class="metrica-card">
+                    <span class="label">Respostas de pesquisa</span>
+                    <span class="valor" id="m_pesquisas">—</span>
+                </div>
+            </div>
+
+            <div class="graficos">
+
+                <div class="grafico-card">
+                    <h3>Ranking de acertos</h3>
+                    <p class="grafico-sub">Usuários com melhor desempenho no quiz</p>
+                    <div class="ranking-lista" id="rankingLista">
+                        <div class="carregando">Carregando...</div>
+                    </div>
+                </div>
+
+                <div class="grafico-card">
+                    <h3>Distribuição de notas</h3>
+                    <p class="grafico-sub">Quantos usuários tiraram cada nota</p>
+                    <canvas id="canvasNotas">
+                        Distribuição: 0-1 acertos, 2 acertos, 3 acertos, 4 acertos, 5 acertos, 6 acertos,
+                        7 acertos, 8 acertos, 9 acertos, 10 acertos
+                    </canvas>
+                </div>
+            </div>
+
+
+            <div class="graficos">
+                <div class="grafico-card">
+                    <h3>Times mais votados</h3>
+                    <p class="grafico-sub">Baseado nas respostas da pesquisa de fãs</p>
+                    <div style="position: relative; height: 260px;">
+                        <canvas id="canvasTimes">
+                            Times favoritos dos fãs.
+                        </canvas>
+                    </div>
+                </div>
+
+                <div class="grafico-card">
+                    <h3>Jogadores mais citados</h3>
+                    <p class="grafico-sub">Baseado nas respostas da pesquisa de fãs</p>
+                    <div style="position: relative; height: 260px;">
+                        <canvas id="canvasJogadores">
+                            Jogadores favoritos dos fãs.
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="graficos2">
+                <div class="grafico-card">
+                    <h3>Taxa de acerto por pergunta</h3>
+                    <p class="grafico-sub">
+                        Azul escuro = acima de 70% · Azul médio = entre 50-70% · Vermelho = abaixo de 50%
+                    </p>
+                    <div style="position: relative; height: 320px;">
+                        <canvas id="canvasPerguntas">
+                            Taxa de acerto por pergunta do quiz.
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="profile.html" class="logo">
+                    <img src="assets/img/logo/logo.png" width="100" height="100" alt="NBA Hub">
+                </a>
+                <p>Sua conexão com a NBA, em um só lugar.</p>
+            </div>
+            <div class="footer-col">
+                <h4>NBA Hub</h4>
+                <ul>
+                    <li><a href="index.html">Sobre nós</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>ÁREA DO USUÁRIO</h4>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html#pesquisa">Pesquisa</a></li>
+                    <li><a href="profile.html#quiz">Quiz</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SUPORTE</h4>
+                <ul>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="footer-divisor" />
+        <div class="footer-bottom">
+            <p>© 2026 NBA Hub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    function carregarDashboard() {
+        obterDadosMetricas();
+        obterDadosRanking();
+        obterDadosNotas();
+        obterDadosTimes();
+        obterDadosJogadores();
+        obterDadosPerguntas();
+    }
+
+
+    function obterDadosMetricas() {
+
+        fetch('/dashboard/metricas', { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    document.getElementById('m_usuarios').textContent = resposta.totalUsuarios;
+                    document.getElementById('m_quizzes').textContent = resposta.totalQuizzes;
+                    document.getElementById('m_aproveitamento').textContent = Math.round(resposta.aproveitamentoMedio) + '%';
+                    document.getElementById('m_pesquisas').textContent = resposta.totalPesquisas;
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        }).catch(function (error) {
+            console.error(`Erro ao buscar métricas: ${error.message}`);
+        });
+    }
+
+    function obterDadosRanking() {
+
+        fetch('/dashboard/ranking', { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarRanking(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        }).catch(function (error) {
+            console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+        });
+    }
+
+    function plotarRanking(resposta) {
+
+        console.log('Montando ranking...');
+
+        let container = document.getElementById('rankingLista');
+        container.innerHTML = '';
+
+        for (let i = 0; i < resposta.length; i++) {
+            var item = resposta[i];
+
+            var linha = document.createElement('div');
+            linha.className = 'ranking-item';
+            linha.innerHTML = `
+                <span class="rankingPosicao">${i + 1}°</span>
+                <span class="rankingNome">${item.nome}</span>
+                <span class="rankingBadge">${item.acertos}/${item.total}</span>
+            `;
+            container.appendChild(linha);
+        }
+    }
+
+    function obterDadosNotas() {
+
+        fetch('/dashboard/distribuicao-notas', { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGraficoNotas(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        }).catch(function (error) {
+            console.error(`Erro ao buscar notas: ${error.message}`);
+        });
+    }
+
+    function plotarGraficoNotas(resposta) {
+
+        console.log('Plotando gráfico de notas...');
+
+        let labels = [];
+        let valores = [];
+
+        for (var i = 0; i < resposta.length; i++) {
+            labels.push(resposta[i].faixa);
+            valores.push(resposta[i].quantidade);
+        }
+
+        console.log(`Labels: ${JSON.stringify(labels)}`);
+        console.log(`Valores: ${JSON.stringify(valores)}`);
+
+
+        const config = {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Usuários',
+                    data: valores,
+                    backgroundColor: '#0f0f7e',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                scales: { y: { beginAtZero: true } }
+            }
+        };
+
+        new Chart(document.getElementById('canvasNotas'), config);
+    }
+
+    function obterDadosTimes() {
+
+        fetch('/dashboard/times-favoritos', { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGraficoTimes(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        }).catch(function (error) {
+            console.error(`Erro ao buscar times: ${error.message}`);
+        });
+    }
+
+    function plotarGraficoTimes(resposta) {
+
+        console.log('Plotando gráfico de times...');
+
+        let labels = [];
+        let valores = [];
+
+        for (var i = 0; i < resposta.length; i++) {
+            labels.push(resposta[i].time);
+            valores.push(resposta[i].votos);
+        }
+
+        console.log('Labels: ' + JSON.stringify(labels));
+        console.log('Valores: ' + JSON.stringify(valores));
+
+        const config = {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Votos',
+                    data: valores,
+                    backgroundColor: '#0f0f7e',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                scales: { x: { beginAtZero: true } }
+            }
+        };
+
+        new Chart(document.getElementById('canvasTimes'), config);
+    }
+
+    function obterDadosJogadores() {
+
+        fetch('/dashboard/jogadores-favoritos', { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGraficoJogadores(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        }).catch(function (error) {
+            console.error(`Erro ao buscar jogadores: ${error.message}`);
+        });
+    }
+
+    function plotarGraficoJogadores(resposta) {
+
+        console.log('Plotando gráfico de jogadores...');
+
+        let labels = [];
+        let valores = [];
+
+        for (let i = 0; i < resposta.length; i++) {
+            labels.push(resposta[i].jogador);
+            valores.push(resposta[i].votos);
+        }
+
+        console.log('Labels: ' + JSON.stringify(labels));
+        console.log('Valores: ' + JSON.stringify(valores));
+
+        const config = {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Votos',
+                    data: valores,
+                    backgroundColor: '#e63946',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                scales: { x: { beginAtZero: true } }
+            }
+        };
+
+        new Chart(document.getElementById('canvasJogadores'), config);
+    }
+
+    function obterDadosPerguntas() {
+
+        fetch('/dashboard/perguntas', { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGraficoPerguntas(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        }).catch(function (error) {
+            console.error(`Erro ao buscar perguntas: ${error.message}`);
+        });
+    }
+
+    function plotarGraficoPerguntas(resposta) {
+
+        console.log('Plotando gráfico de perguntas...');
+
+        let labels = [];
+        let valores = [];
+        let cores = [];
+
+        for (let i = 0; i < resposta.length; i++) {
+            labels.push(resposta[i].pergunta);
+            valores.push(resposta[i].taxaAcerto);
+
+            if (resposta[i].taxaAcerto >= 70) {
+                cores.push('#0f0f7e');
+            } else if (resposta[i].taxaAcerto >= 50) {
+                cores.push('#5555bb');
+            } else {
+                cores.push('#e63946');
+            }
+        }
+
+        console.log(`Labels: ${JSON.stringify(labels)}`);
+        console.log(`Valores: ${JSON.stringify(valores)}`);
+
+        const config = {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Acerto (%)',
+                    data: valores,
+                    backgroundColor: cores,
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        ticks: {
+                            callback: function (value, index) {
+                                return 'Pergunta ' + (index + 1);
+                            }
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function (valor) { return valor + '%'; }
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('canvasPerguntas'), config);
+    }
+
+</script>

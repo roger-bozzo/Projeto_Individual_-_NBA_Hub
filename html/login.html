@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo/logo.png" width="75" height="75">
+
+            </a>
+
+            <a href="login.html">
+                <button class="area_cliente">ACESSAR</button>
+            </a>
+
+        </div>
+    </header>
+
+    <div class="login">
+
+        <div class="container">
+            <div class="card-login">
+                <h2>Acesse a área do usuário</h2>
+                <div class="formulario">
+
+                    <div class="campo">
+                        <span>Insira seu e-mail</span>
+                        <input type="email" placeholder="email@provedor.com.br" id="ipt_email" oninput="validarEmail()">
+                        <div id="txt_email" class="parametros"></div>
+                    </div>
+
+                    <div class="campo">
+                        <span>Insira uma senha</span>
+                        <input type="password" placeholder="********" id="ipt_senha" oninput="validarSenha()">
+                        <div id="txt_senha" class="parametros"></div>
+                    </div>
+
+                    <button class="button" onclick="login()">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="assets/img/logo/logo.png" width="100" height="100">
+                </a>
+                <p>Sua conexão com a NBA, em um só lugar.</p>
+            </div>
+            <div class="footer-col">
+                <h4>NBA Hub</h4>
+                <ul>
+                    <li><a href="index.html">Sobre nós</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>ÁREA DO USUÁRIO</h4>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#">Pesquisa</a></li>
+                    <li><a href="#">Quiz</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>SUPORTE</h4>
+                <ul>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="footer-divisor" />
+
+        <div class="footer-bottom">
+            <p>© 2026 NBA Hub. Todos os direitos reservados.</p>
+        </div>
+
+
+    </footer>
+
+</body>
+
+</html>
+<script>
+    let checkEmail = false
+    let checkTamanhoSenha = false
+    let checkMaiuscula = false
+    let checkMinuscula = false
+    let checkCaractere = false
+    let caracteresEspeciais = ['!', '@', '#', '$', '%', '¨', '&', '*', '(', ')', '-', '_',
+        '+', '=', ',', '.', '<', '>', ':', ';', '"', '|', '?', '/', '°',
+        'º', '~', '^', '´', '`', '{', '[', '}', ']', '£', '¢', '¬', 'ª']
+
+    function validarEmail() {
+        let email = ipt_email.value;
+
+        if (email.includes('@') && email.includes('.')) {
+            txt_email.innerHTML = ``;
+            checkEmail = true
+        } else if (email.includes('.')) {
+            txt_email.innerHTML = `Email deve conter @`
+            checkEmail = false
+        } else if (email.includes('@')) {
+            txt_email.innerHTML = `Email deve conter '.'`
+            checkEmail = false
+        } else {
+            txt_email.innerHTML = 'Deve preencher o email corretamente'
+            checkEmail = false
+        }
+    }
+
+    function validarCaractere() {
+        let senha = ipt_senha.value;
+        for (let i = 0; i < caracteresEspeciais.length; i++) {
+            if (senha.includes(caracteresEspeciais[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validarSenha() {
+        let senha = ipt_senha.value;
+        let tamanho = senha.length;
+        let msg_tamanho = ``
+        let msg_minuscula = ``
+        let msg_maiscula = ``
+        let msg_caractere = ``
+
+        if (senha.toUpperCase() == senha) {
+            msg_minuscula = 'A senha deve conter ao menos 1 letra minúscula. <br>'
+            checkMinuscula = false
+        } else {
+            checkMinuscula = true
+        }
+        if (senha.toLowerCase() == senha) {
+            msg_maiscula = 'A senha deve conter ao menos 1 letra maiúscula. <br>'
+            checkMaiuscula = false
+        } else {
+            checkMaiuscula = true
+        }
+        if (tamanho < 8) {
+            msg_tamanho = 'Senha deve ter pelo menos 8 caracteres. <br>'
+            checkTamanhoSenha = false
+        } else {
+            checkTamanhoSenha = true
+        }
+        if (validarCaractere()) {
+            msg_caractere = 'A senha deve conter ao menos um caractere especial. <br>'
+            checkCaractere = false
+        } else {
+            checkCaractere = true
+        }
+
+        txt_senha.innerHTML = msg_tamanho + msg_minuscula + msg_maiscula + msg_caractere;
+    }
+
+
+    function login() {
+        let email = ipt_email.value;
+        let senha = ipt_senha.value;
+
+        if (checkEmail && checkTamanhoSenha && checkMaiuscula && checkMinuscula && checkCaractere) {
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    emailServer: email,
+                    senhaServer: senha
+                })
+            }).then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(usuario => {
+                        console.log(usuario);
+                        console.log(JSON.stringify(usuario));
+                        sessionStorage.ID_USUARIO = usuario.id;
+                        sessionStorage.NOME_USUARIO = usuario.nome;
+                        sessionStorage.EMAIL_USUARIO = usuario.email;
+
+                        alert('Logado(a) com sucesso!\n\nSeja bem vindo(a) ao NBA HUB.');
+                        setTimeout(function () {
+                            window.location = "profile.html";
+                        }, 1000);
+                    });
+
+                } else {
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                        finalizarAguardar(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log("Erro na requisição:", erro);
+            })
+
+        } else {
+            alert('Não foi possível logar corretamente, tente novamente.');
+        }
+    }
+</script>

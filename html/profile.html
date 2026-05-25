@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="profile.html" class="logo">
+                <img src="assets/img/logo/logo.png" width="75" height="75">
+            </a>
+            <nav>
+                <a href="historia.html">HISTÓRIA</a>
+                <a href="jogadores.html">JOGADORES HISTÓRICOS</a>
+                <a href="equipes.html">EQUIPES</a>
+                <a href="dashboard.html">DASHBOARD</a>
+            </nav>
+            <button class="area_cliente">ACESSAR</button>
+        </div>
+    </header>
+
+<!--Sub header com logos dos 30 times da NBA, clicáveis que levam para o card do respectivo time-->
+    <div class="sub_header">
+        <!--Conferencia Oeste-->
+        <a href="equipes.html#west">
+            <img src="https://loodibee.com/wp-content/uploads/nba-Western_Conference_logo.png" width="30" height="30">
+        </a>
+        <a href="equipes.html#clippers">
+            <img src="https://cdn.nba.com/logos/nba/1610612746/global/L/logo.svg" witdh="30" height="30">
+        </a>
+        <a href="equipes.html#grizzlies">
+            <img src="https://cdn.nba.com/logos/nba/1610612763/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#jazz">
+            <img src="https://cdn.nba.com/logos/nba/1610612762/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#kings">
+            <img src="https://cdn.nba.com/logos/nba/1610612758/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#lakers">
+            <img src="https://cdn.nba.com/logos/nba/1610612747/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#mavs">
+            <img src="https://cdn.nba.com/logos/nba/1610612742/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#nuggets">
+            <img src="https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#pels">
+            <img src="https://cdn.nba.com/logos/nba/1610612740/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#rockets">
+            <img src="https://cdn.nba.com/logos/nba/1610612745/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#spurs">
+            <img src="https://cdn.nba.com/logos/nba/1610612759/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#suns">
+            <img src="https://cdn.nba.com/logos/nba/1610612756/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#okc">
+            <img src="https://cdn.nba.com/logos/nba/1610612760/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#wolves">
+            <img src="https://cdn.nba.com/logos/nba/1610612750/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#blazers">
+            <img src="https://cdn.nba.com/logos/nba/1610612757/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#warriors">
+            <img src="https://cdn.nba.com/logos/nba/1610612744/global/L/logo.svg" width="30" height="30">
+        </a>
+        <!--NBA link site-->
+        <a href="equipes.html#nba">
+            <img src="https://loodibee.com/wp-content/uploads/nba-logo-transparent.png" width="30" height="30">
+        </a>
+
+        <!--Conferencia Leste-->
+        <a href="equipes.html#east">
+            <img src="https://loodibee.com/wp-content/uploads/nba-Eastern_Conference_logo.png" width="30" height="30">
+        </a>
+        <a href="equipes.html#sixers">
+            <img src="https://cdn.nba.com/logos/nba/1610612755/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#bucks">
+            <img src="https://cdn.nba.com/logos/nba/1610612749/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#bulls">
+            <img src="https://cdn.nba.com/logos/nba/1610612741/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#cavs">
+            <img src="https://cdn.nba.com/logos/nba/1610612739/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#celtics">
+            <img src="https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#hawks">
+            <img src="https://cdn.nba.com/logos/nba/1610612737/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#heat">
+            <img src="https://cdn.nba.com/logos/nba/1610612748/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#hornets">
+            <img src="https://cdn.nba.com/logos/nba/1610612766/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#knicks">
+            <img src="https://cdn.nba.com/logos/nba/1610612752/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#magic">
+            <img src="https://cdn.nba.com/logos/nba/1610612753/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#nets">
+            <img src="https://cdn.nba.com/logos/nba/1610612751/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#pacers">
+            <img src="https://cdn.nba.com/logos/nba/1610612754/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#pistons">
+            <img src="https://cdn.nba.com/logos/nba/1610612765/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#raptors">
+            <img src="https://cdn.nba.com/logos/nba/1610612761/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="equipes.html#wizards">
+            <img src="https://cdn.nba.com/logos/nba/1610612764/global/L/logo.svg" width="30" height="30">
+        </a>
+    </div>
+
+<!--Dois cards que ficarão um abaixo do outro, o primeiro contém uma pesquisa para os usuários, 
+sobre jogador e time favorito.
+O segundo card tem um quiz, com 10 perguntas sobre a NBA, informações das perguntas podem ser encontradas
+nas páginas de história, jogadores históricos e equipes-->
+
+    <div class="cards-area">
+        <div id="pesquisa" class="card-pesquisa border-secondary width-fit-content padding-8">
+            <span class="text-bold">Pesquisa de Fã</span>
+            <p>Nos conta quem é o seu time e jogador favorito da NBA.</p>
+            <button onclick="abrirPesquisa()">Responder Pesquisa</button>
+
+            <div id="pesquisa-embed" style="display: none;">
+                <div id="p_paginaPesquisa">
+
+                    <div id="p_formulario" class="flex-colunar width-fit-content border-primary">
+
+                        <div id="p_etapa1" class="flex-colunar padding-8">
+                            <span class="text-bold">Pergunta 1 de 2</span>
+                            <span>Qual é o seu time favorito da NBA?</span>
+
+                            <div class="flex-colunar padding-8">
+                                <span>
+                                    <input type="radio" id="p_time1" name="p_timeFavorito" value="Boston Celtics" />
+                                    <label for="p_time1">Boston Celtics</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="p_time2" name="p_timeFavorito" value="Los Angeles Lakers" />
+                                    <label for="p_time2">Los Angeles Lakers</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="p_time3" name="p_timeFavorito" value="Chicago Bulls" />
+                                    <label for="p_time3">Chicago Bulls</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="p_time4" name="p_timeFavorito"
+                                        value="Golden State Warriors" />
+                                    <label for="p_time4">Golden State Warriors</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="p_time5" name="p_timeFavorito" value="San Antonio Spurs" />
+                                    <label for="p_time5">San Antonio Spurs</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="p_time6" name="p_timeFavorito" value="outro" />
+                                    <label for="p_time6">Outro:</label>
+                                    <input type="text" id="p_timeOutro" placeholder="Digite o nome do time" />
+                                </span>
+                            </div>
+
+                            <button onclick="p_irParaEtapa2()" id="p_btnEtapa2">Próxima pergunta</button>
+                        </div>
+
+                        <div id="p_etapa2" class="flex-colunar padding-8" style="display:none">
+                            <span class="text-bold">Pergunta 2 de 2</span>
+                            <span>Qual é o seu jogador favorito da NBA?</span>
+
+                            <div class="flex-colunar padding-8">
+                                <span>
+                                    <input type="radio" id="p_jogador1" name="p_jogadorFavorito"
+                                        value="Michael Jordan" />
+                                    <label for="p_jogador1">Michael Jordan</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="p_jogador2" name="p_jogadorFavorito" value="LeBron James" />
+                                    <label for="p_jogador2">LeBron James</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="p_jogador3" name="p_jogadorFavorito" value="Kobe Bryant" />
+                                    <label for="p_jogador3">Kobe Bryant</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="p_jogador4" name="p_jogadorFavorito"
+                                        value="Stephen Curry" />
+                                    <label for="p_jogador4">Stephen Curry</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="p_jogador5" name="p_jogadorFavorito"
+                                        value="Shaquille O'Neal" />
+                                    <label for="p_jogador5">Shaquille O'Neal</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="p_jogador6" name="p_jogadorFavorito" value="outro" />
+                                    <label for="p_jogador6">Outro:</label>
+                                    <input type="text" id="p_jogadorOutro" placeholder="Digite o nome do jogador" />
+                                </span>
+                            </div>
+
+                            <div class="flex-colunar padding-8">
+                                <button onclick="p_voltarParaEtapa1()">Voltar</button>
+                                <button onclick="p_enviarPesquisa()" id="p_btnEnviar">Enviar pesquisa</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="p_resultado" class="flex-colunar width-fit-content border-primary padding-8">
+                        <span class="text-bold">Obrigado pela sua resposta!</span>
+                        <span>Time favorito: <span id="p_spanTimeSelecionado" class="text-bold"></span></span>
+                        <span>Jogador favorito: <span id="p_spanJogadorSelecionado" class="text-bold"></span></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz" class="card-quiz border-primary width-fit-content padding-8">
+            <span class="text-bold">Quiz NBA</span>
+            <p>Teste seu conhecimento sobre a história, jogadores e times da NBA.</p>
+            <button onclick="abrirQuiz()">Fazer o Quiz</button>
+
+            <!-- Quiz embutido — conteúdo copiado de quiz.html, IDs prefixados com "q_" -->
+            <div id="quiz-embed" style="display: none;">
+                <div id="q_pontuacaoEJogo">
+
+                    <div id="q_pontuacao" class="flex-colunar width-fit-content border-primary">
+                        <div id="q_pontuacaoDuranteJogo" class="flex-colunar padding-8">
+                            <span class="width-fit-content">Quantidade de acertos: <span
+                                    id="q_spanCertas"></span></span>
+                            <span class="width-fit-content">Quantidade de erros: <span id="q_spanErradas"></span></span>
+                        </div>
+                        <div id="q_pontuacaoFinalJogo" class="flex-colunar padding-8">
+                            <span id="q_pontuacaoFinal" class="width-fit-content">Pontuação Final:
+                                <span id="q_spanPontuacaoFinal"></span>
+                            </span>
+                            <span id="q_msgFinal" class="width-fit-content"></span>
+                        </div>
+                    </div>
+
+                    <div id="q_jogo" class="width-fit-content flex-colunar border-secondary">
+
+                        <div id="q_infoQuestao" class="padding-8">
+                            <span>Questão atual: <span id="q_spanNumeroDaQuestaoAtual"></span> de <span
+                                    id="q_qtdQuestoes"></span>
+                                questões.</span>
+                        </div>
+
+                        <div id="q_perguntaDaQuestaoAtual" class="padding-8">
+                            <span id="q_spanQuestaoExibida" class="text-bold"></span>
+                        </div>
+
+                        <div id="q_infoAlternativas" class="padding-8">
+                            <span><em>Escolha uma opção dentre as abaixo:</em></span>
+                        </div>
+
+                        <div id="q_opcoes" class="flex-colunar padding-8">
+                            <span>
+                                <input type="radio" id="q_primeiraOpcao" name="q_option" class="radio"
+                                    value="alternativaA" />
+                                <label for="q_primeiraOpcao" class="option" id="q_labelOpcaoUm"></label>
+                            </span>
+                            <span>
+                                <input type="radio" id="q_segundaOpcao" name="q_option" class="radio"
+                                    value="alternativaB" />
+                                <label for="q_segundaOpcao" class="option" id="q_labelOpcaoDois"></label>
+                            </span>
+                            <span>
+                                <input type="radio" id="q_terceiraOpcao" name="q_option" class="radio"
+                                    value="alternativaC" />
+                                <label for="q_terceiraOpcao" class="option" id="q_labelOpcaoTres"></label>
+                            </span>
+                            <span>
+                                <input type="radio" id="q_quartaOpcao" name="q_option" class="radio"
+                                    value="alternativaD" />
+                                <label for="q_quartaOpcao" class="option" id="q_labelOpcaoQuatro"></label>
+                            </span>
+                        </div>
+
+                        <div id="q_botoes" class="flex-colunar padding-8">
+                            <button onclick="q_submeter()" id="q_btnSubmeter">Submeter resposta</button>
+                            <button onclick="q_avancar()" id="q_btnProx" disabled>Avançar para próxima questão</button>
+                            <button onclick="q_tentarNovamente()" id="q_btnTentarNovamente" disabled>Tentar
+                                novamente</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <a href="profile.html" class="logo">
+                    <img src="assets/img/logo/logo.png" width="100" height="100">
+                </a>
+                <p>Sua conexão com a NBA, em um só lugar.</p>
+            </div>
+            <div class="footer-col">
+                <h4>NBA Hub</h4>
+                <ul>
+                    <li><a href="index.html">Sobre nós</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>ÁREA DO USUÁRIO</h4>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html#pesquisa">Pesquisa</a></li>
+                    <li><a href="profile.html#quiz">Quiz</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>SUPORTE</h4>
+                <ul>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="footer-divisor" />
+
+        <div class="footer-bottom">
+            <p>© 2026 NBA Hub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+
+    // script da parte do QUiz
+    
+    const listaDeQuestoes = [
+
+        {
+            pergunta: "Qual time ganhou mais títulos da NBA?",
+            alternativaA: "Los Angeles Lakers",
+            alternativaB: "Chicago Bulls",
+            alternativaC: "Boston Celtics",
+            alternativaD: "Golden State Warriors",
+            alternativaCorreta: "alternativaC"
+        },
+
+        {
+            pergunta: "Quem é o maior pontuador da história da NBA?",
+            alternativaA: "Michael Jordan",
+            alternativaB: "Kobe Bryant",
+            alternativaC: "LeBron James",
+            alternativaD: "Kareem Abdul-Jabbar",
+            alternativaCorreta: "alternativaC"
+        },
+
+        {
+            pergunta: "Em que ano a NBA foi fundada?",
+            alternativaA: "1946",
+            alternativaB: "1952",
+            alternativaC: "1956",
+            alternativaD: "1962",
+            alternativaCorreta: "alternativaA"
+        },
+
+        {
+            pergunta: "Qual jogador ficou famoso pelo apelido 'Black Mamba'?",
+            alternativaA: "LeBron James",
+            alternativaB: "Kobe Bryant",
+            alternativaC: "Kevin Durant",
+            alternativaD: "Dwyane Wade",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Quantos times compõem a NBA atualmente?",
+            alternativaA: "28",
+            alternativaB: "30",
+            alternativaC: "32",
+            alternativaD: "29",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Qual jogador possui o maior número de MVPs?",
+            alternativaA: "Kareem Abdul-Jabbar",
+            alternativaB: "Michael Jordan",
+            alternativaC: "Tim Duncan",
+            alternativaD: "LeBron James",
+            alternativaCorreta: "alternativaA"
+        },
+
+        {
+            pergunta: "Em qual cidade foi fundada a franquia Lakers?",
+            alternativaA: "Los Angeles",
+            alternativaB: "St. Louis",
+            alternativaC: "Las Vegas",
+            alternativaD: "Minneapolis",
+            alternativaCorreta: "alternativaD"
+        },
+
+        {
+            pergunta: "Em que ano ocorreu a fusão da NBA com a ABA?",
+            alternativaA: "1966",
+            alternativaB: "1976",
+            alternativaC: "1978",
+            alternativaD: "1982",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Em qual posição do draft de 1983 Michael Jordan foi escolhido?",
+            alternativaA: "1ª",
+            alternativaB: "2ª",
+            alternativaC: "3ª",
+            alternativaD: "4ª",
+            alternativaCorreta: "alternativaC"
+        },
+
+        {
+            pergunta: "Qual é a única equipe da NBA que não está situada nos Estados Unidos?",
+            alternativaA: "Grizzlies",
+            alternativaB: "Magic",
+            alternativaC: "Pelicans",
+            alternativaD: "Raptors",
+            alternativaCorreta: "alternativaD"
+        }
+    ]
+
+    let numeroDaQuestaoAtual = 0
+    let pontuacaoFinal = 0
+    let tentativaIncorreta = 0
+    let certas = 0
+    let erradas = 0
+    let quantidadeDeQuestoes = listaDeQuestoes.length
+
+    function abrirQuiz() {
+        document.getElementById('quiz-embed').style.display = "block"
+
+        document.getElementById('q_pontuacao').style.display = "flex"
+        document.getElementById('q_jogo').style.display = "flex"
+
+        document.getElementById('q_qtdQuestoes').innerHTML = quantidadeDeQuestoes
+
+        q_preencherHTMLcomQuestaoAtual(0)
+
+        q_btnSubmeter.disabled = false
+        q_btnProx.disabled = true
+        q_btnTentarNovamente.disabled = true
+    }
+
+    function q_preencherHTMLcomQuestaoAtual(index) {
+        q_habilitarAlternativas(true)
+        const questaoAtual = listaDeQuestoes[index]
+        numeroDaQuestaoAtual = index
+        document.getElementById("q_spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1
+        document.getElementById("q_spanQuestaoExibida").innerHTML = questaoAtual.pergunta
+        document.getElementById("q_labelOpcaoUm").innerHTML = questaoAtual.alternativaA
+        document.getElementById("q_labelOpcaoDois").innerHTML = questaoAtual.alternativaB
+        document.getElementById("q_labelOpcaoTres").innerHTML = questaoAtual.alternativaC
+        document.getElementById("q_labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD
+    }
+
+    function q_submeter() {
+        const options = document.getElementsByName("q_option")
+
+        let hasChecked = false
+        for (let i = 0; i < options.length; i++) {
+            if (options[i].checked) {
+                hasChecked = true
+                break
+            }
+        }
+
+        if (!hasChecked) {
+            alert("Não há alternativas escolhidas. Escolha uma opção.")
+        } else {
+            q_btnSubmeter.disabled = true
+            q_btnProx.disabled = false
+            q_habilitarAlternativas(false)
+            q_checarResposta()
+        }
+    }
+
+    function q_habilitarAlternativas(trueOrFalse) {
+        let opcaoEscolhida = trueOrFalse ? false : true
+        q_primeiraOpcao.disabled = opcaoEscolhida
+        q_segundaOpcao.disabled = opcaoEscolhida
+        q_terceiraOpcao.disabled = opcaoEscolhida
+        q_quartaOpcao.disabled = opcaoEscolhida
+    }
+
+    function q_avancar() {
+        q_btnProx.disabled = true
+        q_btnSubmeter.disabled = false
+
+        q_desmarcarRadioButtons()
+        q_limparCoresBackgroundOpcoes()
+
+        if (numeroDaQuestaoAtual >= quantidadeDeQuestoes) {
+            q_finalizarJogo()
+        } else {
+            if (numeroDaQuestaoAtual === quantidadeDeQuestoes - 1) {
+                alert("Atenção... a próxima é a última questão!")
+            }
+            q_preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
+        }
+    }
+
+    function q_tentarNovamente() {
+        window.location.reload()
+    }
+
+    function q_checarResposta() {
+        const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual]
+        const respostaQuestaoAtual = questaoAtual.alternativaCorreta
+        const options = document.getElementsByName("q_option")
+
+        let alternativaCorreta = null
+
+        options.forEach((option) => {
+            if (option.value === respostaQuestaoAtual) {
+                alternativaCorreta = option.labels[0].id
+            }
+        })
+
+        options.forEach((option) => {
+            if (option.checked === true && option.value === respostaQuestaoAtual) {
+                document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+                pontuacaoFinal++
+                certas++
+                document.getElementById("q_spanCertas").innerHTML = certas
+                numeroDaQuestaoAtual++
+            } else if (option.checked && option.value !== respostaQuestaoAtual) {
+                const wrongLabelId = option.labels[0].id
+                document.getElementById(wrongLabelId).classList.add("text-danger-with-bg")
+                document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+                tentativaIncorreta++
+                erradas++
+                document.getElementById("q_spanErradas").innerHTML = erradas
+                numeroDaQuestaoAtual++
+            }
+        })
+    }
+
+    function q_limparCoresBackgroundOpcoes() {
+        const options = document.getElementsByName("q_option")
+        options.forEach((option) => {
+            document.getElementById(option.labels[0].id).classList.remove("text-danger-with-bg")
+            document.getElementById(option.labels[0].id).classList.remove("text-success-with-bg")
+        })
+    }
+
+    function q_desmarcarRadioButtons() {
+        const options = document.getElementsByName("q_option")
+        for (let i = 0; i < options.length; i++) {
+            options[i].checked = false
+        }
+    }
+
+    function q_finalizarJogo() {
+        let textoParaMensagemFinal = null
+        let classComCoresParaMensagemFinal = null
+        const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
+
+        if (porcentagemFinalDeAcertos <= 0.3) {
+            textoParaMensagemFinal = "Parece que você não estudou..."
+            classComCoresParaMensagemFinal = "text-danger-with-bg"
+        } else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
+            textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        } else if (porcentagemFinalDeAcertos >= 0.9) {
+            textoParaMensagemFinal = "Uau, parabéns!"
+            classComCoresParaMensagemFinal = "text-success-with-bg"
+        }
+
+        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos) * 100) + "% das questões."
+
+        document.getElementById('q_msgFinal').innerHTML = textoParaMensagemFinal
+        document.getElementById('q_msgFinal').classList.add(classComCoresParaMensagemFinal)
+        document.getElementById('q_spanPontuacaoFinal').innerHTML = pontuacaoFinal
+        document.getElementById('q_jogo').classList.add("text-new-gray")
+
+        q_btnProx.disabled = true
+        q_btnSubmeter.disabled = true
+        q_btnTentarNovamente.disabled = false
+
+        fetch("/quiz/resultado", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO,
+                acertosServer: pontuacaoFinal,
+                totalServer: quantidadeDeQuestoes
+            })
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+                if (!resposta.ok) {
+                    throw "Houve um erro ao tentar salvar o resultado do quiz!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+    }
+
+    // Script da parte de pesquisa 
+
+
+    let timeSelecionado = null
+    let jogadorSelecionado = null
+
+    function abrirPesquisa() {
+        document.getElementById('pesquisa-embed').style.display = "block"
+        document.getElementById('p_formulario').style.display = "flex"
+        document.getElementById('p_etapa2').style.display = "none"
+        document.getElementById('p_resultado').style.display = "none"
+    }
+
+    function p_irParaEtapa2() {
+        timeSelecionado = null
+        if (document.getElementById('p_time1').checked) timeSelecionado = document.getElementById('p_time1').value
+        if (document.getElementById('p_time2').checked) timeSelecionado = document.getElementById('p_time2').value
+        if (document.getElementById('p_time3').checked) timeSelecionado = document.getElementById('p_time3').value
+        if (document.getElementById('p_time4').checked) timeSelecionado = document.getElementById('p_time4').value
+        if (document.getElementById('p_time5').checked) timeSelecionado = document.getElementById('p_time5').value
+        if (document.getElementById('p_time6').checked) timeSelecionado = document.getElementById('p_time6').value
+
+        if (!timeSelecionado) {
+            alert("Por favor, selecione o seu time favorito.")
+            return
+        }
+
+        if (timeSelecionado === "outro" && document.getElementById('p_timeOutro').value.trim() === "") {
+            alert("Por favor, digite o nome do seu time.")
+            return
+        }
+
+        if (timeSelecionado === "outro") timeSelecionado = document.getElementById('p_timeOutro').value.trim()
+
+        document.getElementById('p_etapa1').style.display = "none"
+        document.getElementById('p_etapa2').style.display = "flex"
+    }
+
+    function p_voltarParaEtapa1() {
+        document.getElementById('p_etapa2').style.display = "none"
+        document.getElementById('p_etapa1').style.display = "flex"
+    }
+
+    function p_enviarPesquisa() {
+        jogadorSelecionado = null
+        if (document.getElementById('p_jogador1').checked) jogadorSelecionado = document.getElementById('p_jogador1').value
+        if (document.getElementById('p_jogador2').checked) jogadorSelecionado = document.getElementById('p_jogador2').value
+        if (document.getElementById('p_jogador3').checked) jogadorSelecionado = document.getElementById('p_jogador3').value
+        if (document.getElementById('p_jogador4').checked) jogadorSelecionado = document.getElementById('p_jogador4').value
+        if (document.getElementById('p_jogador5').checked) jogadorSelecionado = document.getElementById('p_jogador5').value
+        if (document.getElementById('p_jogador6').checked) jogadorSelecionado = document.getElementById('p_jogador6').value
+
+        if (!jogadorSelecionado) {
+            alert("Por favor, selecione o seu jogador favorito.")
+            return
+        }
+
+
+        if (jogadorSelecionado === "outro" && document.getElementById('p_jogadorOutro').value.trim() === "") {
+            alert("Por favor, digite o nome do seu jogador.")
+            return
+        }
+
+        if (jogadorSelecionado === "outro") jogadorSelecionado = document.getElementById('p_jogadorOutro').value.trim()
+
+        let timeFavorito = timeSelecionado
+        let jogadorFavorito = jogadorSelecionado
+
+        document.getElementById('p_spanTimeSelecionado').innerHTML = timeFavorito
+        document.getElementById('p_spanJogadorSelecionado').innerHTML = jogadorFavorito
+
+        document.getElementById('p_formulario').style.display = "none"
+        document.getElementById('p_resultado').style.display = "flex"
+
+        console.log("Pesquisa enviada:", { time_favorito: timeFavorito, jogador_favorito: jogadorFavorito })
+
+        fetch("/pesquisa/responder", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO,
+                timeFavoritoServer: timeFavorito,
+                jogadorFavoritoServer: jogadorFavorito
+            })
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+                if (!resposta.ok) {
+                    throw "Houve um erro ao tentar salvar a pesquisa!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+    }
+
+</script>

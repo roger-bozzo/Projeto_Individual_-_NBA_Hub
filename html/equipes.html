@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipes</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/equipes.css" />
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="profile.html" class="logo">
+                <img src="assets/img/logo/logo.png" width="75" height="75">
+
+            </a>
+
+            <nav>
+                <a href="historia.html">HISTÓRIA</a>
+                <a href="jogadores.html">JOGADORES HISTÓRICOS</a>
+                <a href="equipes.html">EQUIPES</a>
+                <a href="dashboard.html">DASHBOARD</a>
+            </nav>
+
+            <button class="area_cliente">ACESSAR</button>
+
+        </div>
+    </header>
+
+    <!--Sub header com logos dos 30 times da NBA, clicáveis que levam para o card do respectivo time-->
+
+    <div class="sub_header">
+        <!--Conferencia Oeste-->
+        <a href="#west">
+            <img src="https://loodibee.com/wp-content/uploads/nba-Western_Conference_logo.png" width="30" height="30">
+        </a>
+        <a href="#clippers">
+            <img src="https://cdn.nba.com/logos/nba/1610612746/global/L/logo.svg" witdh="30" height="30">
+        </a>
+        <a href="#grizzlies">
+            <img src="https://cdn.nba.com/logos/nba/1610612763/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#jazz">
+            <img src="https://cdn.nba.com/logos/nba/1610612762/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#kings">
+            <img src="https://cdn.nba.com/logos/nba/1610612758/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#lakers">
+            <img src="https://cdn.nba.com/logos/nba/1610612747/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#mavs">
+            <img src="https://cdn.nba.com/logos/nba/1610612742/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#nuggets">
+            <img src="https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#pels">
+            <img src="https://cdn.nba.com/logos/nba/1610612740/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#rockets">
+            <img src="https://cdn.nba.com/logos/nba/1610612745/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#spurs">
+            <img src="https://cdn.nba.com/logos/nba/1610612759/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#suns">
+            <img src="https://cdn.nba.com/logos/nba/1610612756/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#okc">
+            <img src="https://cdn.nba.com/logos/nba/1610612760/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#wolves">
+            <img src="https://cdn.nba.com/logos/nba/1610612750/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#blazers">
+            <img src="https://cdn.nba.com/logos/nba/1610612757/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#warriors">
+            <img src="https://cdn.nba.com/logos/nba/1610612744/global/L/logo.svg" width="30" height="30">
+        </a>
+        <!--NBA link site-->
+        <a href="#nba">
+            <img src="https://loodibee.com/wp-content/uploads/nba-logo-transparent.png" width="30" height="30">
+        </a>
+
+        <!--Conferencia Leste-->
+        <a href="#east">
+            <img src="https://loodibee.com/wp-content/uploads/nba-Eastern_Conference_logo.png" width="30" height="30">
+        </a>
+        <a href="#sixers">
+            <img src="https://cdn.nba.com/logos/nba/1610612755/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#bucks">
+            <img src="https://cdn.nba.com/logos/nba/1610612749/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#bulls">
+            <img src="https://cdn.nba.com/logos/nba/1610612741/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#cavs">
+            <img src="https://cdn.nba.com/logos/nba/1610612739/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#celtics">
+            <img src="https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#hawks">
+            <img src="https://cdn.nba.com/logos/nba/1610612737/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#heat">
+            <img src="https://cdn.nba.com/logos/nba/1610612748/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#hornets">
+            <img src="https://cdn.nba.com/logos/nba/1610612766/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#knicks">
+            <img src="https://cdn.nba.com/logos/nba/1610612752/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#magic">
+            <img src="https://cdn.nba.com/logos/nba/1610612753/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#nets">
+            <img src="https://cdn.nba.com/logos/nba/1610612751/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#pacers">
+            <img src="https://cdn.nba.com/logos/nba/1610612754/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#pistons">
+            <img src="https://cdn.nba.com/logos/nba/1610612765/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#raptors">
+            <img src="https://cdn.nba.com/logos/nba/1610612761/global/L/logo.svg" width="30" height="30">
+        </a>
+        <a href="#wizards">
+            <img src="https://cdn.nba.com/logos/nba/1610612764/global/L/logo.svg" width="30" height="30">
+        </a>
+    </div>
+
+    <main>
+        <div class="equipes">
+            <div class="cards">
+                <div class="card" id="nba">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://loodibee.com/wp-content/uploads/nba-logo-transparent.png" width="80"
+                                height="80">
+                        </div>
+                    </div>
+
+                    <!--Card sobre a NBA, apenas informações e logo, não possui uniforme-->
+                    <div class="card-right">
+                        <h2>NBA</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1946</li>
+                            <li><b>Cidade atual (sede):</b> New York, NY - Estados Unidos</li>
+                            <li><b>Nomes anteriores:</b> Basketball Association of America (BAA, 1946–1949)</li>
+                            <li><b>Cores:</b> Vermelho, branco e azul</li>
+                            <li><b>Destaques históricos:</b> Expansão global, fusão com a ABA em 1976, maior liga de
+                                basquete do mundo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Card sobre a Conferencia Oeste, 
+                assim como o card da nba não possui uniformes, apenas logo e informações-->
+
+                <div class="card" id="west">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://loodibee.com/wp-content/uploads/nba-Western_Conference_logo.png"
+                                witdh="80" height="80">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Conferência Oeste</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1970 (após expansão da NBA)</li>
+                            <li><b>Cidade atual (sede):</b> — (representa equipes do Oeste dos EUA)</li>
+                            <li><b>Cores:</b> Vermelho e branco</li>
+                            <li><b>Títulos:</b> Diversos campeões históricos como Lakers, Spurs, Warriors</li>
+                            <li><b>Destaques históricos:</b> Domínio dos Lakers nos anos 1980, Spurs nos anos 2000 e
+                                Warriors na era moderna</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Lista de cards com os times atuais da NBA, com informações, logo e uniformes dos times-->
+
+                <div class="card" id="clippers">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612746/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/clippers/clippers_home.jpg">
+                            <img src="assets/img/uniformes/clippers/clippers_away.jpg">
+                            <img src="assets/img/uniformes/clippers/clippers_alt1.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Los Angeles Clippers</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1970</li>
+                            <li><b>Cidade atual:</b> Los Angeles, Califórnia</li>
+                            <li><b>Nomes anteriores:</b> Buffalo Braves (1970–1978), San Diego Clippers (1978–1984)</li>
+                            <li><b>Cores:</b> Vermelho, azul e branco</li>
+                            <li><b>Títulos:</b> Nenhum</li>
+                            <li><b>Jogadores históricos:</b> Bob McAdoo, Chris Paul, Blake Griffin, Elton Brand, Kawhi
+                                Leonard, Paul George</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="grizzlies">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612763/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/grizzlies/grizzlies_home.jpg">
+                            <img src="assets/img/uniformes/grizzlies/grizzlies_away.jpg">
+                            <img src="assets/img/uniformes/grizzlies/grizzlies_alt.jpg">
+                            <img src="assets/img/uniformes/grizzlies/grizzlies_classic.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Memphis Grizzlies</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1995</li>
+                            <li><b>Cidade atual:</b> Memphis, Tennessee</li>
+                            <li><b>Nomes anteriores:</b> Vancouver Grizzlies (1995–2001)</li>
+                            <li><b>Cores:</b> Azul marinho, dourado e branco</li>
+                            <li><b>Títulos:</b> Nenhum</li>
+                            <li><b>Jogadores históricos:</b> Pau Gasol, Marc Gasol, Zach Randolph, Mike Conley, Ja
+                                Morant
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="jazz">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612762/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/jazz/jazz_home.jpg">
+                            <img src="assets/img/uniformes/jazz/jazz_away.jpg">
+                            <img src="assets/img/uniformes/jazz/jazz_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Utah Jazz</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1974</li>
+                            <li><b>Cidade atual:</b> Salt Lake City, Utah</li>
+                            <li><b>Nomes anteriores:</b> New Orleans Jazz (1974–1979)</li>
+                            <li><b>Cores:</b> Azul, verde e dourado</li>
+                            <li><b>Títulos:</b> Nenhum</li>
+                            <li><b>Jogadores históricos:</b> Karl Malone, John Stockton, Pete Maravich, Andrei
+                                Kirilenko,
+                                Jeff Hornacek, Deron Williams, Mark Eaton, Adrian Dantley, Rudy Gobert, Donovan Mitchell
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="kings">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612758/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/kings/kings_home.jpg">
+                            <img src="assets/img/uniformes/kings/kings_away.jpg">
+                            <img src="assets/img/uniformes/kings/kings_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Sacramento Kings</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1923</li>
+                            <li><b>Cidade atual:</b> Sacramento, Califórnia</li>
+                            <li><b>Nomes anteriores:</b> Rochester Royals (1945–1957), Cincinnati Royals (1957–1972),
+                                Kansas
+                                City Kings (1972–1985)</li>
+                            <li><b>Cores:</b> Roxo, preto e prata</li>
+                            <li><b>Títulos:</b> 1 (1951)</li>
+                            <li><b>Jogadores históricos:</b> Oscar Robertson, Peja Stojakovic, Jerry Lucas, Tiny
+                                Archibald,
+                                Jack Twyman, Mitch Richmond,
+                                Chris Webber, Jason Williams, DeMarcus Cousins, De'Aaron Fox</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="lakers">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612747/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/lakers/lakers_home.jpg">
+                            <img src="assets/img/uniformes/lakers/lakers_away.jpg">
+                            <img src="assets/img/uniformes/lakers/lakers_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Los Angeles Lakers</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1947</li>
+                            <li><b>Cidade atual:</b> Los Angeles, Califórnia</li>
+                            <li><b>Nomes anteriores:</b> Minneapolis Lakers (1947–1960)</li>
+                            <li><b>Cores:</b> Roxo, dourado e branco</li>
+                            <li><b>Títulos:</b> 17</li>
+                            <li><b>Jogadores históricos:</b> Magic Johnson, Kareem Abdul-Jabbar, Kobe Bryant, Jerry
+                                West,
+                                Elgin Baylor, Shaquille
+                                O'Neal, Wilt Chamberlain, George Mikan, James Worthy, LeBron James</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="mavs">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612742/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/mavs/mavs_home.jpg">
+                            <img src="assets/img/uniformes/mavs/mavs_away.jpg">
+                            <img src="assets/img/uniformes/mavs/mavs_alt.jpg">
+                            <img src="assets/img/uniformes/mavs/mavs_classic.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Dallas Mavericks</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1980</li>
+                            <li><b>Cidade atual:</b> Dallas, Texas</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Dallas Mavericks)</li>
+                            <li><b>Cores:</b> Azul, branco e prata</li>
+                            <li><b>Títulos:</b> 1 (2011)</li>
+                            <li><b>Jogadores históricos:</b> Dirk Nowitzki, Michael Finley, Rolando Blackman, Derek
+                                Harper,
+                                Jason Terry,
+                                Jason Kidd, Steve Nash Luka Dončić</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="nuggets">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/nuggets/nuggets_home.jpg">
+                            <img src="assets/img/uniformes/nuggets/nuggets_away.jpg">
+                            <img src="assets/img/uniformes/nuggets/nuggets_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Denver Nuggets</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1967</li>
+                            <li><b>Cidade atual:</b> Denver, Colorado</li>
+                            <li><b>Nomes anteriores:</b> Denver Rockets (1967–1974)</li>
+                            <li><b>Cores:</b> Azul, dourado e branco</li>
+                            <li><b>Títulos:</b> 1 (2023)</li>
+                            <li><b>Jogadores históricos:</b> Alex English, Dan Issel, David Thompson, Dikembe Mutombo,
+                                Carmelo Anthony, Nenê, Nikola Jokić, Jamal Murray</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="pels">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612740/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/pelicans/pels_home.jpg">
+                            <img src="assets/img/uniformes/pelicans/pels_away.jpg">
+                            <img src="assets/img/uniformes/pelicans/pels_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>New Orleans Pelicans</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 2002</li>
+                            <li><b>Cidade atual:</b> New Orleans, Louisiana</li>
+                            <li><b>Nomes anteriores:</b> New Orleans Hornets (2002–2013)</li>
+                            <li><b>Cores:</b> Azul marinho, dourado e vermelho</li>
+                            <li><b>Títulos:</b> Nenhum</li>
+                            <li><b>Jogadores históricos:</b> Chris Paul, Anthony Davis, David West, Tyson Chandler, Zion
+                                Williamson</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="rockets">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612745/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/rockets/rockets_home.jpg">
+                            <img src="assets/img/uniformes/rockets/rockets_away.jpg">
+                            <img src="assets/img/uniformes/rockets/rockets_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Houston Rockets</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1967</li>
+                            <li><b>Cidade atual:</b> Houston, Texas</li>
+                            <li><b>Nomes anteriores:</b> San Diego Rockets (1967–1971)</li>
+                            <li><b>Cores:</b> Vermelho, preto e branco</li>
+                            <li><b>Títulos:</b> 2 (1994, 1995)</li>
+                            <li><b>Jogadores históricos:</b> Hakeem Olajuwon, Calvin Murphy, Rudy Tomjanovich, Moses
+                                Malone,
+                                Yao Ming, James Harden</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="spurs">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612759/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/spurs/spurs_home.jpg">
+                            <img src="assets/img/uniformes/spurs/spurs_away.jpg">
+                            <img src="assets/img/uniformes/spurs/spurs_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>San Antonio Spurs</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1967</li>
+                            <li><b>Cidade atual:</b> San Antonio, Texas</li>
+                            <li><b>Nomes anteriores:</b> Dallas Chaparrals (1967–1973)</li>
+                            <li><b>Cores:</b> Preto, prata e branco</li>
+                            <li><b>Títulos:</b> 5 (1999, 2003, 2005, 2007, 2014)</li>
+                            <li><b>Jogadores históricos:</b> Tim Duncan, David Robinson, Tony Parker, Manu Ginóbili,
+                                George
+                                Gervin, James Silas,
+                                Artis Gilmore, Larry Kenon, Bruce Bowen, Sean Elliott</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="suns">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612756/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/suns/suns_home.jpg">
+                            <img src="assets/img/uniformes/suns/suns_away.jpg">
+                            <img src="assets/img/uniformes/suns/suns_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Phoenix Suns</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1968</li>
+                            <li><b>Cidade atual:</b> Phoenix, Arizona</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Phoenix Suns)</li>
+                            <li><b>Cores:</b> Roxo, laranja e preto</li>
+                            <li><b>Títulos:</b> Nenhum</li>
+                            <li><b>Jogadores históricos:</b> Charles Barkley, Steve Nash, Shawn Marion, Kevin Johnson,
+                                Amar'e Stoudemire,
+                                Larry Nance, Leandro Barbosa, Walter Davis, Devin Booker</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="okc">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612760/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/thunder/thunder_home.jpg">
+                            <img src="assets/img/uniformes/thunder/thunder_away.jpg">
+                            <img src="assets/img/uniformes/thunder/thunder_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Oklahoma City Thunder</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1967</li>
+                            <li><b>Cidade atual:</b> Oklahoma City, Oklahoma</li>
+                            <li><b>Nomes anteriores:</b> Seattle SuperSonics (1967–2008)</li>
+                            <li><b>Cores:</b> Azul, laranja e branco</li>
+                            <li><b>Títulos:</b> 2 (1979, como Seattle SuperSonics e 2025, como Oklahoma City Thunder)</li>
+                            <li><b>Jogadores históricos:</b> Gary Payton, Kevin Durant, Russell Westbrook, Shai
+                                Gilgeous-Alexander, Jack Sikma, Shawn Kemp, Detlef Schrempf</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="wolves">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612750/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/wolves/wolves_home.jpg">
+                            <img src="assets/img/uniformes/wolves/wolves_away.jpg">
+                            <img src="assets/img/uniformes/wolves/wolves_alt.jpg">
+                            <img src="assets/img/uniformes/wolves/wolves_classic.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Minnesota Timberwolves</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1989</li>
+                            <li><b>Cidade atual:</b> Minneapolis, Minnesota</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Timberwolves)</li>
+                            <li><b>Cores:</b> Azul, verde e branco</li>
+                            <li><b>Títulos:</b> Nenhum</li>
+                            <li><b>Jogadores históricos:</b> Kevin Garnett, Karl-Anthony Towns, Anthony Edwards, Kevin
+                                Love,
+                                Rudy Gobert, Sam Mitchell</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="blazers">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612757/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/blazers/blazers-home.jpg">
+                            <img src="assets/img/uniformes/blazers/blazers-away.jpg">
+                            <img src="assets/img/uniformes/blazers/blazers-alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Portland Trail Blazers</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1970</li>
+                            <li><b>Cidade atual:</b> Portland, Oregon</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Trail Blazers)</li>
+                            <li><b>Cores:</b> Vermelho, preto e branco</li>
+                            <li><b>Títulos:</b> 1 (1977)</li>
+                            <li><b>Jogadores históricos:</b> Bill Walton, Clyde Drexler, Damian Lillard, LaMarcus
+                                Aldridge,
+                                Rasheed Wallace,
+                                Arvydas Sabonis, Jerome Kersey, Buck Williams, Terry Porter</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="warriors">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612744/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/warriors/warriors_home.jpg">
+                            <img src="assets/img/uniformes/warriors/warriors_away.jpg">
+                            <img src="assets/img/uniformes/warriors/warriors_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Golden State Warriors</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1946</li>
+                            <li><b>Cidade atual:</b> San Francisco, Califórnia</li>
+                            <li><b>Nomes anteriores:</b> Philadelphia Warriors (1946–1962), San Francisco Warriors
+                                (1962–1971)</li>
+                            <li><b>Cores:</b> Azul e dourado</li>
+                            <li><b>Títulos:</b> 7 (mais recente em 2022)</li>
+                            <li><b>Jogadores históricos:</b> Wilt Chamberlain, Rick Barry, Stephen Curry, Klay Thompson,
+                                Draymond Green, Paul Arizin, Chris Mullin, Tim Hardaway, Nate Thurmond, Baron Davis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Card sobre a Conferencia Leste, 
+                assim como o card da nba não possui uniformes, apenas logo e informações-->
+
+                <div class="card" id="east">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://loodibee.com/wp-content/uploads/nba-Eastern_Conference_logo.png"
+                                width="80" height="80" alt="Logo Conferência Leste">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Conferência Leste</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1970 (após expansão da NBA)</li>
+                            <li><b>Cidade atual (sede):</b> — (representa equipes do Leste dos EUA)</li>
+                            <li><b>Cores:</b> Azul e branco</li>
+                            <li><b>Títulos:</b> Diversos campeões históricos como Celtics, Bulls, Heat</li>
+                            <li><b>Destaques históricos:</b> Dinastia dos Celtics nos anos 1960, Bulls nos anos 1990 e
+                                Heat
+                                nos anos 2000</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="sixers">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612755/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/sixers/sixers_home.jpg">
+                            <img src="assets/img/uniformes/sixers/sixers_away.jpg">
+                            <img src="assets/img/uniformes/sixers/sixers_alt.jpg">
+                            <img src="assets/img/uniformes/sixers/sixers_classic.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Philadelphia 76ers</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1946</li>
+                            <li><b>Cidade atual:</b> Philadelphia, Pensilvânia</li>
+                            <li><b>Nomes anteriores:</b> Syracuse Nationals (1946–1963)</li>
+                            <li><b>Cores:</b> Vermelho, azul e branco</li>
+                            <li><b>Títulos:</b> 3 (1955, 1967, 1983)</li>
+                            <li><b>Jogadores históricos:</b> Wilt Chamberlain, Julius Erving, Dolph Schayes, Charles
+                                Barkley,
+                                Maurice Cheeks, Allen Iverson, Joel Embiid, Hal Greer
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="bucks">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612749/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/bucks/bucks_home.jpg">
+                            <img src="assets/img/uniformes/bucks/bucks_away.jpg">
+                            <img src="assets/img/uniformes/bucks/bucks_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Milwaukee Bucks</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1968</li>
+                            <li><b>Cidade atual:</b> Milwaukee, Wisconsin</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Bucks)</li>
+                            <li><b>Cores:</b> Verde, branco e creme</li>
+                            <li><b>Títulos:</b> 2 (1971, 2021)</li>
+                            <li><b>Jogadores históricos:</b> Kareem Abdul-Jabbar, Oscar Robertson, Giannis
+                                Antetokounmpo,
+                                Sidney Moncrief,
+                                Marques Johnson, Ray Allen, Terry Cummings
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="bulls">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612741/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/bulls/bulls_home.jpg">
+                            <img src="assets/img/uniformes/bulls/bulls_away.jpg">
+                            <img src="assets/img/uniformes/bulls/bulls_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Chicago Bulls</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1966</li>
+                            <li><b>Cidade atual:</b> Chicago, Illinois</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Bulls)</li>
+                            <li><b>Cores:</b> Vermelho, preto e branco</li>
+                            <li><b>Títulos:</b> 6 (1991–1993, 1996–1998)</li>
+                            <li><b>Jogadores históricos:</b> Michael Jordan, Scottie Pippen, Dennis Rodman, Chet Walker,
+                                Artis Gilmore,
+                                Joakim Noah, Jerry Sloan, Toni Kukoc
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="cavs">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612739/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/cavs/cavs_home.jpg">
+                            <img src="assets/img/uniformes/cavs/cavs_away.jpg">
+                            <img src="assets/img/uniformes/cavs/cavs_alt.jpg">
+                            <img src="assets/img/uniformes/cavs/cavs_classic.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Cleveland Cavaliers</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1970</li>
+                            <li><b>Cidade atual:</b> Cleveland, Ohio</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Cavaliers)</li>
+                            <li><b>Cores:</b> Vinho, dourado e branco</li>
+                            <li><b>Títulos:</b> 1 (2016)</li>
+                            <li><b>Jogadores históricos:</b> LeBron James, Kyrie Irving, Mark Price, Brad Daugherty,
+                                Zydrunas Ilgauskas,
+                                Anderson Varejão, Larry Nance
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="celtics">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/celtics/celtics_home.jpg">
+                            <img src="assets/img/uniformes/celtics/celtics_away.jpg">
+                            <img src="assets/img/uniformes/celtics/celtics_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Boston Celtics</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1946</li>
+                            <li><b>Cidade atual:</b> Boston, Massachusetts</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Celtics)</li>
+                            <li><b>Cores:</b> Verde, branco e dourado</li>
+                            <li><b>Títulos:</b> 18</li>
+                            <li><b>Jogadores históricos:</b> Bill Russell, Larry Bird, Paul Pierce, Kevin Garnett, Ray
+                                Allen, John Havlicek,
+                                Robert Parish, Kevin McHale, Sam Jones, Bob Cousy, Dave Cowens, Bill Sharman, Jayson
+                                Tatum,
+                                Jaylen Brown
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="hawks">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612737/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/hawks/hawks_home.jpg">
+                            <img src="assets/img/uniformes/hawks/hawks_away.jpg">
+                            <img src="assets/img/uniformes/hawks/hawks_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Atlanta Hawks</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1946</li>
+                            <li><b>Cidade atual:</b> Atlanta, Geórgia</li>
+                            <li><b>Nomes anteriores:</b> Tri-Cities Blackhawks (1946–1951), St. Louis Hawks (1955–1968)
+                            </li>
+                            <li><b>Cores:</b> Vermelho, preto e branco</li>
+                            <li><b>Títulos:</b> 1 (1958)</li>
+                            <li><b>Jogadores históricos:</b> Dominique Wilkins, Bob Pettit, Cliff Hagan, Kevin Willis,
+                                Doc
+                                Rivers,
+                                Steve Smith, Trae Young</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="heat">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612748/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/heat/heat_home.jpg">
+                            <img src="assets/img/uniformes/heat/heat_away.jpg">
+                            <img src="assets/img/uniformes/heat/heat_alt2.jpg">
+                            <img src="assets/img/uniformes/heat/heat_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Miami Heat</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1988</li>
+                            <li><b>Cidade atual:</b> Miami, Flórida</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Heat)</li>
+                            <li><b>Cores:</b> Vermelho, preto e branco</li>
+                            <li><b>Títulos:</b> 3 (2006, 2012, 2013)</li>
+                            <li><b>Jogadores históricos:</b> Dwyane Wade, Alonzo Mourning, LeBron James, Shaquille
+                                O'Neal,
+                                Bam Adebayo, Chris Bosh, Tim Hardaway
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="hornets">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612766/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/hornets/hornets_home.jpg">
+                            <img src="assets/img/uniformes/hornets/hornets_away.jpg">
+                            <img src="assets/img/uniformes/hornets/hornets_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Charlotte Hornets</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1988</li>
+                            <li><b>Cidade atual:</b> Charlotte, Carolina do Norte</li>
+                            <li><b>Nomes anteriores:</b> Charlotte Bobcats (2004–2014)</li>
+                            <li><b>Cores:</b> Roxo, teal e branco</li>
+                            <li><b>Títulos:</b> Nenhum</li>
+                            <li><b>Jogadores históricos:</b> Larry Johnson, Alonzo Mourning, Kemba Walker, Gerald
+                                Wallace,
+                                Muggsy Bogues, Dell Curry, Baron Davis
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="knicks">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612752/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/knicks/knicks_home.jpg">
+                            <img src="assets/img/uniformes/knicks/knicks_away.jpg">
+                            <img src="assets/img/uniformes/knicks/knicks_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>New York Knicks</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1946</li>
+                            <li><b>Cidade atual:</b> Nova York, NY</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Knicks)</li>
+                            <li><b>Cores:</b> Azul, laranja e branco</li>
+                            <li><b>Títulos:</b> 2 (1970, 1973)</li>
+                            <li><b>Jogadores históricos:</b> Walt Frazier, Patrick Ewing, Willis Reed, Earl Monroe,
+                                Carmelo
+                                Anthony,
+                                Jalen Brunson
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="magic">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612753/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/magic/magic_home.jpg">
+                            <img src="assets/img/uniformes/magic/magic_away.jpg">
+                            <img src="assets/img/uniformes/magic/magic_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Orlando Magic</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1989</li>
+                            <li><b>Cidade atual:</b> Orlando, Flórida</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Magic)</li>
+                            <li><b>Cores:</b> Azul, preto e prata</li>
+                            <li><b>Títulos:</b> Nenhum</li>
+                            <li><b>Jogadores históricos:</b> Shaquille O'Neal, Penny Hardaway, Dwight Howard, Nick
+                                Anderson,
+                                Tracy McGrady, Jameer Nelson
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="nets">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612751/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/nets/nets_home.jpg">
+                            <img src="assets/img/uniformes/nets/nets_away.jpg">
+                            <img src="assets/img/uniformes/nets/nets_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Brooklyn Nets</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1967</li>
+                            <li><b>Cidade atual:</b> Brooklyn, Nova York</li>
+                            <li><b>Nomes anteriores:</b> New Jersey Nets (1977–2012)</li>
+                            <li><b>Cores:</b> Preto e branco</li>
+                            <li><b>Títulos:</b> Nenhum</li>
+                            <li><b>Jogadores históricos:</b> Jason Kidd, Vince Carter, Julius Erving, Buck Williams,
+                                Brook Lopez, Richard Jefferson
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="pacers">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612754/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/pacers/pacers.jpg">
+                            <img src="assets/img/uniformes/pacers/pacers_away.jpg">
+                            <img src="assets/img/uniformes/pacers/pacers_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Indiana Pacers</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1967</li>
+                            <li><b>Cidade atual:</b> Indianápolis, Indiana</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Pacers)</li>
+                            <li><b>Cores:</b> Azul e dourado</li>
+                            <li><b>Títulos:</b> Nenhum na NBA (3 na ABA)</li>
+                            <li><b>Jogadores históricos:</b> Reggie Miller, Jermaine O'Neal, Mark Jackson, Rik Smits,
+                                Paul
+                                George</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="pistons">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612765/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/pistons/pistons_home.jpg">
+                            <img src="assets/img/uniformes/pistons/pistons_away.jpg">
+                            <img src="assets/img/uniformes/pistons/pistons_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Detroit Pistons</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1941</li>
+                            <li><b>Cidade atual:</b> Detroit, Michigan</li>
+                            <li><b>Nomes anteriores:</b> Fort Wayne Pistons (1941–1957)</li>
+                            <li><b>Cores:</b> Vermelho, azul e branco</li>
+                            <li><b>Títulos:</b> 3 (1989, 1990, 2004)</li>
+                            <li><b>Jogadores históricos:</b> Isiah Thomas, Joe Dumars, Ben Wallace, Bill Laimbeer, Bob
+                                Lanier,
+                                Chauncey Billups, Rip Hamilton, Rasheed Wallace, Grant Hill, Dave Bing, Dennis Rodman
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="raptors">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612761/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/raptors/raptors_home.jpg">
+                            <img src="assets/img/uniformes/raptors/raptors_away.jpg">
+                            <img src="assets/img/uniformes/raptors/raptors_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Toronto Raptors</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1995</li>
+                            <li><b>Cidade atual:</b> Toronto, Canadá</li>
+                            <li><b>Nomes anteriores:</b> — (sempre Raptors)</li>
+                            <li><b>Cores:</b> Vermelho, preto e branco</li>
+                            <li><b>Títulos:</b> 1 (2019)</li>
+                            <li><b>Jogadores históricos:</b> Vince Carter, Chris Bosh, Kawhi Leonard, Kyle Lowry, DeMar
+                                DeRozan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="wizards">
+                    <div class="card-left">
+                        <div class="logos_equipes">
+                            <img src="https://cdn.nba.com/logos/nba/1610612764/global/L/logo.svg" width="80"
+                                height="80">
+                        </div>
+                        <div class="uniformes">
+                            <h3>Uniformes</h3>
+                            <img src="assets/img/uniformes/wizards/wizards_home.jpg">
+                            <img src="assets/img/uniformes/wizards/wizards_away.jpg">
+                            <img src="assets/img/uniformes/wizards/wizards_alt.jpg">
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <h2>Washington Wizards</h2>
+                        <ul>
+                            <li><b>Fundação:</b> 1961</li>
+                            <li><b>Cidade atual:</b> Washington, D.C.</li>
+                            <li><b>Nomes anteriores:</b> Chicago Packers (1961–1962), Baltimore Bullets (1963–1973),
+                                Washington Bullets (1974–1997)</li>
+                            <li><b>Cores:</b> Vermelho, azul e branco</li>
+                            <li><b>Títulos:</b> 1 (1978)</li>
+                            <li><b>Jogadores históricos:</b> Wes Unseld, Elvin Hayes, Gilbert Arenas, Michael Jordan,
+                                John
+                                Wall, Bradley Beal</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <a href="profile.html" class="logo">
+                    <img src="assets/img/logo/logo.png" width="100" height="100">
+                </a>
+                <p>Sua conexão com a NBA, em um só lugar.</p>
+            </div>
+            <div class="footer-col">
+                <h4>NBA Hub</h4>
+                <ul>
+                    <li><a href="index.html">Sobre nós</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>ÁREA DO USUÁRIO</h4>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html#pesquisa">Pesquisa</a></li>
+                    <li><a href="profile.html#quiz">Quiz</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>SUPORTE</h4>
+                <ul>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="footer-divisor" />
+
+        <div class="footer-bottom">
+            <p>© 2026 NBA Hub. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

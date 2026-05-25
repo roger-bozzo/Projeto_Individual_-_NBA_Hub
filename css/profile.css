@@ -1,0 +1,197 @@
+.cards-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 120px 32px 48px;
+}
+
+
+.card-pesquisa {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 560px;
+}
+
+.card-quiz {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 560px;
+}
+
+#q_jogo{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card-pesquisa > span.text-bold,
+.card-quiz > span.text-bold {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f0f7e;
+}
+
+
+.card-pesquisa > p,
+.card-quiz > p {
+    font-size: 14px;
+    color: #444;
+    margin: 0;
+}
+
+
+.card-pesquisa > button,
+.card-quiz > button {
+    align-self: flex-start;
+    border: 2px solid #e63946;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Helvetica', Arial, sans-serif;
+    background-color: #0f0f7e;
+    color: white;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.card-pesquisa > button:hover,
+.card-quiz > button:hover {
+    color: #e63946;
+    border-color: white;
+}
+
+
+input[type="radio"].radio,
+#p_formulario input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"].radio + label.option,
+#p_formulario input[type="radio"] + label {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    border: 2px solid #0f0f7e;
+    border-radius: 20px;
+    background: white;
+    color: #0f0f7e;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    user-select: none;
+}
+
+
+input[type="radio"].radio + label.option:hover,
+#p_formulario input[type="radio"] + label:hover {
+    background: rgba(15, 15, 126, 0.08);
+    border-color: #e63946;
+    color: #e63946;
+}
+
+input[type="radio"].radio:checked + label.option,
+#p_formulario input[type="radio"]:checked + label {
+    background: #0f0f7e;
+    border-color: #0f0f7e;
+    color: white;
+}
+
+input[type="radio"].radio:disabled + label.option,
+#p_formulario input[type="radio"]:disabled + label {
+    cursor: default;
+    opacity: 0.75;
+}
+
+label.text-success-with-bg {
+    background: #1a7f3c;
+    border-color: #1a7f3c ;
+    color: white ;
+}
+
+label.text-danger-with-bg {
+    background: #e63946 ;
+    border-color: #e63946 ;
+    color: white ;
+}
+
+label.text-warning-with-bg {
+    background: #e8a020 ;
+    border-color: #e8a020;
+    color: white;
+}
+
+#q_opcoes span,
+#p_formulario .flex-colunar span {
+    display: block;
+    width: 100%;
+}
+
+#p_etapa1,
+#p_etapa2 {
+    display: flex ;
+    flex-direction: column ;
+    gap: 10px;
+}
+
+#p_etapa2 > .flex-colunar {
+    display: flex ;
+    flex-direction: column ;
+    gap: 8px;
+}
+
+#q_botoes button,
+#p_etapa1 > button,
+#p_etapa2 .flex-colunar button {
+    align-self: center;
+    margin-top: 8px;
+    border: 2px solid #e63946;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Helvetica', Arial, sans-serif;
+    background-color: #0f0f7e;
+    color: white;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+#q_botoes button:hover:not(:disabled),
+#p_etapa1 > button:hover,
+#p_etapa2 .flex-colunar button:hover {
+    color: #e63946;
+    border-color: white;
+}
+
+#q_botoes button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+#p_timeOutro,
+#p_jogadorOutro {
+    margin-top: 6px;
+    padding: 8px 14px;
+    border: 2px solid #e63946;
+    border-radius: 20px;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 13px;
+    color: gray;
+    width: 100%;
+}

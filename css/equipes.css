@@ -1,0 +1,86 @@
+.equipes .cards .card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.equipes .cards .card:not(:has(.uniformes)) {
+    align-items: center;
+}
+
+.card-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    flex-shrink: 0;
+    margin-right: 30px;
+}
+
+.card-left .logos_equipes img {
+    width: 200px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.uniformes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 4px;
+    width: 100%;
+    text-align: center;
+}
+
+.uniformes h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0 0 4px 0;
+    font-size: 0.9em;
+}
+
+.uniformes img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 4px;
+    border-radius: 8px;
+    mix-blend-mode: multiply;
+    background-color: transparent;
+    display: inline-block;
+}
+
+.uniformes img:last-child:nth-child(4) {
+    grid-column: 1 / -1;
+    margin: 0 auto;
+}
+
+.card-right {
+    padding-top: 50px;
+    flex: 1;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.card-right h2 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.card-right ul {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    list-style: none;
+    padding-left: 0;
+    font-size: 18px;
+}
