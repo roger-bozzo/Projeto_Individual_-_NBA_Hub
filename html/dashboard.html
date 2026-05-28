@@ -105,20 +105,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="graficos2">
-                <div class="grafico-card">
-                    <h3>Taxa de acerto por pergunta</h3>
-                    <p class="grafico-sub">
-                        Azul escuro = acima de 70% · Azul médio = entre 50-70% · Vermelho = abaixo de 50%
-                    </p>
-                    <div style="position: relative; height: 320px;">
-                        <canvas id="canvasPerguntas">
-                            Taxa de acerto por pergunta do quiz.
-                        </canvas>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -166,7 +152,7 @@
         obterDadosNotas();
         obterDadosTimes();
         obterDadosJogadores();
-        obterDadosPerguntas();
+        ;
     }
 
 
@@ -378,82 +364,6 @@
         };
 
         new Chart(document.getElementById('canvasJogadores'), config);
-    }
-
-    function obterDadosPerguntas() {
-
-        fetch('/dashboard/perguntas', { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    plotarGraficoPerguntas(resposta);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        }).catch(function (error) {
-            console.error(`Erro ao buscar perguntas: ${error.message}`);
-        });
-    }
-
-    function plotarGraficoPerguntas(resposta) {
-
-        console.log('Plotando gráfico de perguntas...');
-
-        let labels = [];
-        let valores = [];
-        let cores = [];
-
-        for (let i = 0; i < resposta.length; i++) {
-            labels.push(resposta[i].pergunta);
-            valores.push(resposta[i].taxaAcerto);
-
-            if (resposta[i].taxaAcerto >= 70) {
-                cores.push('#0f0f7e');
-            } else if (resposta[i].taxaAcerto >= 50) {
-                cores.push('#5555bb');
-            } else {
-                cores.push('#e63946');
-            }
-        }
-
-        console.log(`Labels: ${JSON.stringify(labels)}`);
-        console.log(`Valores: ${JSON.stringify(valores)}`);
-
-        const config = {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Acerto (%)',
-                    data: valores,
-                    backgroundColor: cores,
-                    borderRadius: 6
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: {
-                        ticks: {
-                            callback: function (value, index) {
-                                return 'Pergunta ' + (index + 1);
-                            }
-                        }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        max: 100,
-                        ticks: {
-                            callback: function (valor) { return valor + '%'; }
-                        }
-                    }
-                }
-            }
-        };
-
-        new Chart(document.getElementById('canvasPerguntas'), config);
     }
 
 </script>

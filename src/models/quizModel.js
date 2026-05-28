@@ -45,7 +45,8 @@ function rankingQuiz() {
         FROM quiz_resultado qr
         JOIN usuario u ON qr.fk_usuario = u.id
         GROUP BY u.id, u.nome
-        ORDER BY melhor_pontuacao DESC;
+        ORDER BY melhor_pontuacao DESC
+        LIMIT 6;
     `;
     return database.executar(instrucaoSql);
 }

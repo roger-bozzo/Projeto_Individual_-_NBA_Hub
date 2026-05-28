@@ -18,6 +18,7 @@
     display: flex;
     min-width: 90%;
     width: auto;
+    justify-content: space-around;
     align-items: center;
     gap: 15px;
     height: 400px;
@@ -29,11 +30,15 @@
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.897);
 }
 
-.card img {
+.card-left img {
     width: auto;
     max-height: 300px;
 }
 
-.card p {
+.card-right {
     margin: 0;
+}
+
+.card-right p{
+    justify-content: flex-start;
 }
