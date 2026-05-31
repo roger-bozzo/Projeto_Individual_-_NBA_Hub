@@ -3,3 +3,9 @@ node_modules
 package-lock.json
 
 .github
+
+# Variáveis de ambiente
+.env
+.env.dev
+.env.*
+
