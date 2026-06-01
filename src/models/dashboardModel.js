@@ -20,8 +20,7 @@ function getRanking() {
         FROM quiz_resultado qr
         JOIN usuario u ON u.id = qr.fk_usuario
         GROUP BY qr.fk_usuario, u.nome, qr.total
-        ORDER BY acertos DESC
-        LIMIT 10;
+        ORDER BY acertos DESC;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -45,7 +44,7 @@ function getTimesFavoritos() {
         WHERE time_favorito IS NOT NULL
         GROUP BY time_favorito
         ORDER BY votos DESC
-        LIMIT 10;
+        LIMIT 6;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -58,7 +57,7 @@ function getJogadoresFavoritos() {
         WHERE jogador_favorito IS NOT NULL
         GROUP BY jogador_favorito
         ORDER BY votos DESC
-        LIMIT 10;
+        LIMIT 6;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

@@ -7,12 +7,35 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('../assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BarlowCondensed';
+    src: url('../assets/fonts/BarlowCondensed-Regular.ttf') format('truetype');
+}
+
 html {
     scroll-padding-top: 120px;
 }
 
+h1, h2, h3, h4 {
+    font-family: 'BebasNeue', sans-serif;
+}
+
+p, span, a, li, ul, input, button {
+    font-family: 'BarlowCondensed', sans-serif;
+    font-size: 20px;
+}
+
+strong, b {
+    font-family: 'BarlowCondensed', sans-serif;
+    font-size: 20px;
+}
+
 body {
-    font-family: 'Helvetica', Arial, sans-serif;
     background: linear-gradient(135deg, #0f0f7e, #e63946);
     min-height: 100%;
     display: flex;
@@ -50,7 +73,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
     padding: 6px 12px;
     border-radius: 6px;
@@ -69,7 +92,7 @@ nav a:hover {
     border: 1.5px solid white;
     padding: 10px 20px;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
 }
@@ -87,7 +110,7 @@ nav a:hover {
  
 .nome-usuario {
     color: white;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
 }
  
@@ -97,7 +120,7 @@ button.sair {
     border: 1.5px solid white;
     padding: 6px 16px;
     border-radius: 20px;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
 }
@@ -146,7 +169,7 @@ button.sair:hover {
 }
 
 .hero h1 {
-    font-size: 28px;
+    font-size: 36px;
     color: rgb(15, 15, 126);
 }
 
@@ -200,8 +223,7 @@ button.sair:hover {
     border: #e63946 2px solid;
     border-radius: 20px;
     background: white;
-    font-family: 'Helvetica', Arial, sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     color: gray;
     text-align: center;
 }
@@ -217,7 +239,7 @@ button.sair:hover {
     border: 2px solid #e63946;
     padding: 10px 50px;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 600;
     background-color: #0f0f7e;
     color: white;
@@ -249,13 +271,13 @@ footer {
 }
 
 .footer-brand p {
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     max-width: 180px;
 }
 
 .footer-col h4 {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: 2px;
     color: white;
@@ -270,7 +292,7 @@ footer {
 }
 
 .footer-col ul li a {
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     text-decoration: none;
 }
@@ -297,6 +319,6 @@ footer {
 }
 
 .footer-bottom p {
-    font-size: 14px;
+    font-size: 16px;
     color: white;
 }

@@ -8,37 +8,83 @@
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-.estrelas .cards {
-    display: contents;
-    justify-content: center;
-    gap: 20px;
+.estrelas .cards .card {
+    font-family: 'BarlowCondensed', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
 }
 
-.estrelas .cards .card {
+.card-left {
+    padding-top: 40px;
+    padding-bottom: 40px;
     display: flex;
-    min-width: 90%;
-    width: auto;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    gap: 15px;
-    height: 400px;
-    padding: 15px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.747);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.897);
+    width: 300px;
+    flex-shrink: 0;
+    margin-right: 30px;
 }
 
 .card-left img {
-    width: auto;
-    max-height: 300px;
+    width: 300px;
+    height: 380px;
+    object-fit: contain;
 }
 
 .card-right {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    flex: 1;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+.card-right h2 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 40px;
+    margin-bottom: 12px;
+    font-family: 'BebasNeue', sans-serif;
+}
+
+
+.nickname, .medias, .posicao {
+    font-family: 'BarlowCondensed', sans-serif;
+}
+
+.nickname {
+    font-style: italic;
+    font-weight: bold;
+    margin: 8px 0 4px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.medias {
+    font-size: 15px;
+    color: #555;
+    text-align: center;
     margin: 0;
 }
 
-.card-right p{
-    justify-content: flex-start;
+.posicao {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin: 0;
+}
+
+.card-right p, .card-right span, .card-right strong {
+    font-family: 'BarlowCondensed', sans-serif;
+    font-size: 18px;
 }

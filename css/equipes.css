@@ -63,6 +63,14 @@
     margin: 0 auto;
 }
 
+.uniformes img:hover {
+    transform: scale(1.25);
+    transition: 0.3s;
+    cursor: zoom-in;
+    position: relative;
+    z-index: 10;
+}
+
 .card-right {
     padding-top: 50px;
     flex: 1;
@@ -73,7 +81,7 @@
 .card-right h2 {
     text-align: center;
     margin-top: 0;
-    font-size: 40px;
+    font-size: 50px;
     margin-bottom: 12px;
 }
 
@@ -82,5 +90,4 @@
     padding-bottom: 50px;
     list-style: none;
     padding-left: 0;
-    font-size: 18px;
 }

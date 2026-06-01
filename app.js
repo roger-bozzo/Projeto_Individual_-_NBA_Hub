@@ -1,7 +1,7 @@
-//var ambiente_processo = 'producao';
-var ambiente_processo = 'desenvolvimento';
+var ambiente_processo = 'producao';
+//var ambiente_processo = 'desenvolvimento';
 
-var caminho_env = ambiente_processo === 'desenvolvimento' ? '.env' : '.env.dev';
+var caminho_env = ambiente_processo === 'producao' ? '.env' : '.env.dev';
 // Acima, temos o uso do operador ternário para definir o caminho do arquivo .env
 // A sintaxe do operador ternário é: condição ? valor_se_verdadeiro : valor_se_falso
 
@@ -45,7 +45,7 @@ app.listen(PORTA_APP, function () {
     ##   ##  ######   #####             ####     ##  ##     ##     ##  ##              ##      ####    ######  
     \n\n\n                                                                                                 
     Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar .: http://${HOST_APP}:${PORTA_APP} :. \n\n
-    Você está rodando sua aplicação em ambiente de .:${process.env.AMBIENTE_PROCESSO}:. \n\n
+    Você está rodando sua aplicação em ambiente de .:${ambiente_processo}:. \n\n
     \tSe .:desenvolvimento:. você está se conectando ao banco local. \n
     \tSe .:producao:. você está se conectando ao banco remoto. \n\n
     \t\tPara alterar o ambiente, comente ou descomente as linhas 1 ou 2 no arquivo 'app.js'\n\n`);

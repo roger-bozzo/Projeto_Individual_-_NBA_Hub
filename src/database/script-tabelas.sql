@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS nba_hub;
-
 USE nba_hub;
 
 CREATE TABLE IF NOT EXISTS usuario (
@@ -30,17 +28,6 @@ CREATE TABLE quiz_resultado (
     CONSTRAINT fk_usuario_quiz_resultado FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
-select * from quiz_resultado;
-
-SELECT
-            u.nome,
-            qr.acertos,
-            qr.total,
-            ROUND((qr.acertos / qr.total) * 100, 1) AS percentual,
-            qr.feito_em
-        FROM quiz_resultado qr
-        JOIN usuario u ON qr.fk_usuario = u.id
-        ORDER BY qr.feito_em DESC;
 
 CREATE TABLE pesquisa_resposta (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -56,9 +43,7 @@ INSERT INTO quiz_pergunta (pergunta, opcao_a, opcao_b, opcao_c, opcao_d, respost
 ('Quem é o maior pontuador da história da NBA?', 'Michael Jordan', 'Kobe Bryant', 'LeBron James', 'Kareem Abdul-Jabbar', 'C'),
 ('Em que ano a NBA foi fundada?', '1946', '1952', '1956', '1962', 'A'),
 ('Qual jogador ficou famoso pelo apelido "Black Mamba"?', 'LeBron James', 'Kobe Bryant', 'Kevin Durant', 'Dwyane Wade', 'B'),
-('Quantos times compõem a NBA atualmente?', '28', '30', '32', '29', 'B');
-
-INSERT INTO quiz_pergunta (pergunta, opcao_a, opcao_b, opcao_c, opcao_d, resposta) VALUES
+('Quantos times compõem a NBA atualmente?', '28', '30', '32', '29', 'B'),
 ('Qual jogador possui o maior número de MVPs?', 'Kareem Abdul Jabbar', 'Michael Jordan', 'Tim Duncan', 'Lebron James', 'A'),
 ('Em qual cidade foi fundada a franquia Lakers?', 'Los Angeles', 'St. Louis', 'Las Vegas', 'Minneapolis', 'D'),
 ('Em que ano ocorreu a fusão da NBA com a ABA?', '1966', '1976', '1978', '1982', 'B'),
@@ -66,27 +51,3 @@ INSERT INTO quiz_pergunta (pergunta, opcao_a, opcao_b, opcao_c, opcao_d, respost
 ('Qual é a única equipe da NBA que não está situada nos Estados Unidos?', 'Grizzlies', 'Magic', 'Pelicans', 'Raptors', 'D');
 
 SELECT * FROM usuario;
-
-SELECT * FROM quiz_resultado;
-
-SELECT* FROM pesquisa_resposta;
-
-SELECT u.nome AS Usuário,
-q.acertos AS Quiz_Acertos,
-q.total AS Quiz_Total,
-p.time_favorito AS Time_Favorito,
-p.jogador_favorito AS Jogador_Favorito
-FROM usuario u
-JOIN quiz_resultado q ON u.id = q.fk_usuario
-JOIN pesquisa_resposta p ON u.id = p.fk_usuario;
-
-SELECT
-            u.nome,
-            MAX(qr.acertos) AS melhor_pontuacao,
-            COUNT(qr.id)    AS vezes_jogado
-        FROM quiz_resultado qr
-        JOIN usuario u ON qr.fk_usuario = u.id
-        GROUP BY u.id, u.nome
-        ORDER BY melhor_pontuacao DESC
-        LIMIT 6;
-

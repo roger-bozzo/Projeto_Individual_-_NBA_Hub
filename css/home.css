@@ -3,12 +3,14 @@
     padding: 12px 24px;
     border-radius: 20px;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .cta button.cadastro {
     background: rgb(15, 15, 126);
     color: white;
     border: 1.5px solid white;
+    font-size: 18px;
 }
 
 .sobre,
@@ -20,4 +22,7 @@
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+.recursos .cards .card{
+    font-family: 'BarlowCondensed', sans-serif;
 }

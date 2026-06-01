@@ -1,5 +1,4 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
     background-color: #f5f5f5;
     color: #222;
     margin: 0;
@@ -12,12 +11,12 @@ body {
 }
 
 .hero h1 {
-    font-size: 2.2em;
+    font-size: 50px;
     margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 20px;
     color: black;
 }
 
@@ -39,10 +38,56 @@ body {
 }
 
 #historia-nba p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.6;
     margin-top: 0;
-    margin-bottom: 25px;   /* aumenta o espaço entre parágrafos */
+    margin-bottom: 25px;
     text-align: justify;
     margin: 20px 0;
+}
+
+.historia-img {
+    margin: 32px auto;
+    max-width: 820px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
+}
+
+.historia-img img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    background: #111;
+    display: block;
+}
+
+.historia-img figcaption {
+    background: rgba(0, 0, 0, 0.75);
+    color: #ccc;
+    font-size: 13px;
+    padding: 10px 16px;
+    text-align: center;
+    font-style: italic;
+}
+
+.historia-img-dupla {
+    display: flex;
+    gap: 10px;
+    margin: 32px auto;
+    max-width: 820px;
+}
+
+.historia-img-dupla .historia-img {
+    flex: 1;
+    margin: 0;
+}
+
+.historia-img-dupla .historia-img img {
+    aspect-ratio: unset;
+    height: 320px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    width: 100%;
 }
